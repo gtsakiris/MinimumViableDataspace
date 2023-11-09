@@ -34,7 +34,7 @@ services:
       - registration-service
     ports:
       - "9191:9191"
-      - "8181:8181"
+      - "${COMPANY1_8181:-8181}:8181"
       - "5005:5005"
       - "7171:7171"
     volumes:

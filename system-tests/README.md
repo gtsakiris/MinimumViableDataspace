@@ -16,8 +16,10 @@ EDC, RegistrationService and IdentityHub are available as Maven artifacts. Thus,
 following command from the root of the `MVD` project folder:
 
 ```bash
-./gradlew build -x test
+./gradlew build -x test -x javadoc
 ```
+
+> Note: At these stage the builded connectors will not be able to run successfully in local env. If the docker-compose.yml is being executed, the connector's containers will exit with error 255 related to Certificates configuration. Execute the following paragraph to successfully build the proper containers.  
 
 ## Test Execution using embedded services
 

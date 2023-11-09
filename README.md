@@ -20,11 +20,18 @@ The MVD backend and MVD UI (Data Dashboard) can be run locally for testing and d
 2. Set the environment variable `MVD_UI_PATH` to the path of the DataDashboard repository. (See example below.)
 3. Use the instructions in section `Publish/Build Tasks` [system-tests/README.md](system-tests/README.md) to set up a
    local MVD environment with the exception to use the profile `ui`. (See example below.)
-    - In order to verify your local environment works properly, also follow section `Local Test Execution`
-      in `system-tests/README.md` .
+    - In order to verify your local environment works properly, also follow section `Test Execution using embedded services`
+      in [system-tests/README.md](system-tests/README.md) .
 
 > Using the profile `ui` will create three MVD UIs (Data Dashboards) for each EDC participant in addition to the
 > services described in [system-tests/README.md](system-tests/README.md).
+
+> Note: Verify that the ports defined in the system-tests/docker-compose.yml are free on the system. To that end, use the following command and if necessary select a different Host Port to be exposed.  
+```bash
+netstat -nltpn | grep -E '9191|818s1|5005|7171|9192|8182|5006|7172|9193|8183|5007|7173|10000|8184|8185|5008|7174|7080|7081|7082'
+```
+
+Start the MVD containers
 
 ```bash
 export MVD_UI_PATH="/path/to/mvd-datadashboard"
